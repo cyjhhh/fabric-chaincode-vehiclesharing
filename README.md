@@ -44,7 +44,7 @@ source ./scripts/setparas.sh                               # 执行一些其他�
 ## 分别对每个节点安装chaincode
 ~~~
 source ./scripts/setparas.sh peerenv 0 1  # peerenv对应在setparas.sh表示设置对应节点peer0.org1的环境变量
-peer chaincode install -n $CC_NAME -v $VERSION -l $LANGUAGE -p $CC_SRC_PATH  # chaincode是peer的字命令，install是chaincode的子命令
+peer chaincode install -n $CC_NAME -v $VERSION -l $LANGUAGE -p $CC_SRC_PATH  # chaincode是peer的子命令，install是chaincode的子命令
 ~~~
 原教程中，下一步执行的是对peer0.org2的环境变量的设置，对应的命令是source ./scripts/setparas.sh peerenv 0 2；但是由于所有节点的容器都开在一个虚拟机中，所有不同peer开启的端口是不同的，而在setparas.sh全部对应的是7051，如果按官方教程执行，则会出现以下报错
 ~~~
